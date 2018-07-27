@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ro100.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clasa_intrabari_rsp.cs" />
+    <Compile Include="functiiComune.cs" />
     <Compile Include="intrebari_DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +77,12 @@
     </Compile>
     <Compile Include="main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificareIntrebari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificareIntrebari.Designer.cs">
+      <DependentUpon>ModificareIntrebari.cs</DependentUpon>
     </Compile>
     <Compile Include="player_teste.cs">
       <SubType>Form</SubType>
@@ -114,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificareIntrebari.resx">
+      <DependentUpon>ModificareIntrebari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="player_teste.resx">
       <DependentUpon>player_teste.cs</DependentUpon>
@@ -175,6 +188,7 @@
     <Content Include="intrebari_test.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="ro100.ico" />
     <None Include="Resources\_1_incepe.png" />
     <None Include="Resources\_2_incepe.png" />
     <None Include="Resources\Tricolor1.png" />

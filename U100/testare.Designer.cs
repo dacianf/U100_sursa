@@ -57,6 +57,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel_testare = new System.Windows.Forms.Panel();
             this.label_titlu_intrebGres = new System.Windows.Forms.Label();
+            this.button_modifyDB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.intrebari_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intrebariDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intrebariBindingSource)).BeginInit();
@@ -321,6 +322,7 @@
             this.panel_testare.Size = new System.Drawing.Size(896, 516);
             this.panel_testare.TabIndex = 15;
             this.panel_testare.Visible = false;
+            this.panel_testare.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_testare_Paint);
             // 
             // label_titlu_intrebGres
             // 
@@ -333,6 +335,16 @@
             this.label_titlu_intrebGres.Text = "Întrebările greșite";
             this.label_titlu_intrebGres.Visible = false;
             // 
+            // button_modifyDB
+            // 
+            this.button_modifyDB.Location = new System.Drawing.Point(12, 522);
+            this.button_modifyDB.Name = "button_modifyDB";
+            this.button_modifyDB.Size = new System.Drawing.Size(90, 27);
+            this.button_modifyDB.TabIndex = 16;
+            this.button_modifyDB.Text = "Mod Intreb";
+            this.button_modifyDB.UseVisualStyleBackColor = true;
+            this.button_modifyDB.Click += new System.EventHandler(this.button_modifyDB_Click);
+            // 
             // testare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +352,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(897, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.button_modifyDB);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.panel_testare);
             this.Controls.Add(this.panel_startIntreb);
@@ -390,5 +403,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel_testare;
         private System.Windows.Forms.Label label_titlu_intrebGres;
+        private System.Windows.Forms.Button button_modifyDB;
     }
 }

@@ -54,7 +54,16 @@
               <Mapping SourceColumn="Text Intrebare" DataSetColumn="Text Intrebare" />
               <Mapping SourceColumn="Nr Raspunsuri Corecte" DataSetColumn="Nr Raspunsuri Corecte" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="intrebari_ConnectionString (Settings)" DbObjectName="Intrebari" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, [Text Intrebare], [Nr Raspunsuri Corecte] FROM Intrebari</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RaspunsuriTableAdapter" GeneratorDataComponentClassName="RaspunsuriTableAdapter" Name="Raspunsuri" UserDataComponentName="RaspunsuriTableAdapter">
             <MainSource>
@@ -120,7 +129,7 @@
   <xs:element name="intrebari_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="intrebari_DataSet" msprop:Generator_UserDSName="intrebari_DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Intrebari" msprop:Generator_TableClassName="IntrebariDataTable" msprop:Generator_TableVarName="tableIntrebari" msprop:Generator_TablePropName="Intrebari" msprop:Generator_RowDeletingName="IntrebariRowDeleting" msprop:Generator_RowChangingName="IntrebariRowChanging" msprop:Generator_RowEvHandlerName="IntrebariRowChangeEventHandler" msprop:Generator_RowDeletedName="IntrebariRowDeleted" msprop:Generator_UserTableName="Intrebari" msprop:Generator_RowChangedName="IntrebariRowChanged" msprop:Generator_RowEvArgName="IntrebariRowChangeEvent" msprop:Generator_RowClassName="IntrebariRow">
+        <xs:element name="Intrebari" msprop:Generator_TableClassName="IntrebariDataTable" msprop:Generator_TableVarName="tableIntrebari" msprop:Generator_RowChangedName="IntrebariRowChanged" msprop:Generator_TablePropName="Intrebari" msprop:Generator_RowDeletingName="IntrebariRowDeleting" msprop:Generator_RowChangingName="IntrebariRowChanging" msprop:Generator_RowEvHandlerName="IntrebariRowChangeEventHandler" msprop:Generator_RowDeletedName="IntrebariRowDeleted" msprop:Generator_RowClassName="IntrebariRow" msprop:Generator_UserTableName="Intrebari" msprop:Generator_RowEvArgName="IntrebariRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -135,7 +144,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Raspunsuri" msprop:Generator_TableClassName="RaspunsuriDataTable" msprop:Generator_TableVarName="tableRaspunsuri" msprop:Generator_TablePropName="Raspunsuri" msprop:Generator_RowDeletingName="RaspunsuriRowDeleting" msprop:Generator_RowChangingName="RaspunsuriRowChanging" msprop:Generator_RowEvHandlerName="RaspunsuriRowChangeEventHandler" msprop:Generator_RowDeletedName="RaspunsuriRowDeleted" msprop:Generator_UserTableName="Raspunsuri" msprop:Generator_RowChangedName="RaspunsuriRowChanged" msprop:Generator_RowEvArgName="RaspunsuriRowChangeEvent" msprop:Generator_RowClassName="RaspunsuriRow">
+        <xs:element name="Raspunsuri" msprop:Generator_TableClassName="RaspunsuriDataTable" msprop:Generator_TableVarName="tableRaspunsuri" msprop:Generator_RowChangedName="RaspunsuriRowChanged" msprop:Generator_TablePropName="Raspunsuri" msprop:Generator_RowDeletingName="RaspunsuriRowDeleting" msprop:Generator_RowChangingName="RaspunsuriRowChanging" msprop:Generator_RowEvHandlerName="RaspunsuriRowChangeEventHandler" msprop:Generator_RowDeletedName="RaspunsuriRowDeleted" msprop:Generator_RowClassName="RaspunsuriRow" msprop:Generator_UserTableName="Raspunsuri" msprop:Generator_RowEvArgName="RaspunsuriRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -164,7 +173,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="IntrebariRaspunsuri" msdata:parent="Intrebari" msdata:child="Raspunsuri" msdata:parentkey="ID" msdata:childkey="idIntrebare" msprop:Generator_UserChildTable="Raspunsuri" msprop:Generator_ChildPropName="GetRaspunsuriRows" msprop:Generator_UserRelationName="IntrebariRaspunsuri" msprop:Generator_ParentPropName="IntrebariRow" msprop:Generator_RelationVarName="relationIntrebariRaspunsuri" msprop:Generator_UserParentTable="Intrebari" />
+      <msdata:Relationship name="IntrebariRaspunsuri" msdata:parent="Intrebari" msdata:child="Raspunsuri" msdata:parentkey="ID" msdata:childkey="idIntrebare" msprop:Generator_UserChildTable="Raspunsuri" msprop:Generator_ChildPropName="GetRaspunsuriRows" msprop:Generator_UserRelationName="IntrebariRaspunsuri" msprop:Generator_RelationVarName="relationIntrebariRaspunsuri" msprop:Generator_UserParentTable="Intrebari" msprop:Generator_ParentPropName="IntrebariRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

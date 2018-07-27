@@ -18,3 +18,4 @@ H:\proiecte C#\U100\U100\obj\Debug\AxInterop.WMPLib.dll
 H:\proiecte C#\U100\U100\obj\Debug\U100.csproj.ResolveComReference.cache
 H:\proiecte C#\U100\U100\obj\Debug\U100.video.resources
 H:\proiecte C#\U100\U100\obj\Debug\U100.poze.resources
+H:\proiecte C#\U100\U100\obj\Debug\U100.ModificareIntrebari.resources
