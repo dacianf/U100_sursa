@@ -314,6 +314,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificareIntrebari";
             this.Load += new System.EventHandler(this.ModificareIntrebari_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModificareIntrebari_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.intrebariBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intrebari_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intrebariRaspunsuriBindingSource)).EndInit();

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 
+
 namespace U100
 {
     public partial class ModificareIntrebari : Form
@@ -18,13 +19,13 @@ namespace U100
         DataTable intrebari, raspunsuri;
         List<clasa_intrabari_rsp> listaIntrebariBD = new List<clasa_intrabari_rsp>();
         List<string> texteIntrebari = new List<string>();
-        
+
         int numarInrebari;
         public ModificareIntrebari()
         {
 
             InitializeComponent();
-
+        
         }
 
         private void ModificareIntrebari_Load(object sender, EventArgs e)
@@ -69,20 +70,31 @@ namespace U100
             string txtIntreb = textBox_intrebare.Text;
             if (esteDuplicat(txtIntreb) == false && campuriGoale() == false)
             {
-
+                
                 this.intrebariTableAdapter.Insert(textBox_intrebare.Text, Convert.ToInt32(textBox_nr_rsp_cor.Text));
-                int indexIntrebInBD = Convert.ToInt32(intrebari.Rows[numarInrebari-1][0].ToString());
-                indexIntrebInBD++;//indexare de la 0
+                this.intrebariTableAdapter.Fill(this.intrebari_DataSet.Intrebari);
+
+                int indexIntrebInBD = 0;
+                if (numarInrebari > 0)
+                {
+                    indexIntrebInBD = Convert.ToInt32(intrebari.Rows[numarInrebari - 1][0].ToString());
+                    indexIntrebInBD++;//indexare de la 0
+                }
+                else indexIntrebInBD = Convert.ToInt32(intrebari.Rows[numarInrebari][0].ToString());
+                
+
                 this.raspunsuriTableAdapter.Insert(indexIntrebInBD, textBox_raspuns1.Text, checkBox1.Checked);
                 this.raspunsuriTableAdapter.Insert(indexIntrebInBD, textBox_raspuns2.Text, checkBox2.Checked);
                 this.raspunsuriTableAdapter.Insert(indexIntrebInBD, textBox_raspuns3.Text, checkBox3.Checked);
                 this.raspunsuriTableAdapter.Insert(indexIntrebInBD, textBox_raspuns4.Text, checkBox4.Checked);
-                this.intrebariTableAdapter.Fill(this.intrebari_DataSet.Intrebari);
                 this.raspunsuriTableAdapter.Fill(this.intrebari_DataSet.Raspunsuri);
+
                 adaugaInLista(ref listaIntrebariBD, numarInrebari);
                 //reîmprostpătare listă întrebări
                 listBox_intreabari.DataSource = null;
                 listBox_intreabari.DataSource = texteIntrebari;
+                
+                //numarInrebari++;
             }
             else if (esteDuplicat(txtIntreb) == true) MessageBox.Show("Această întrebare există deja în baza de date");
             else MessageBox.Show("Nu ați completat toate câmpurile");
@@ -210,6 +222,11 @@ namespace U100
                 textBox_raspuns4.TextLength == 0 || 
                 k.ToString() != textBox_nr_rsp_cor.Text) return true;
             return false;
+        }
+
+        private void ModificareIntrebari_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
 
         void adaugaInLista(ref List<clasa_intrabari_rsp> intrebariBD, int crtIndex)

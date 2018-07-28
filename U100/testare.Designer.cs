@@ -337,11 +337,11 @@
             // 
             // button_modifyDB
             // 
-            this.button_modifyDB.Location = new System.Drawing.Point(12, 522);
+            this.button_modifyDB.Location = new System.Drawing.Point(12, 513);
             this.button_modifyDB.Name = "button_modifyDB";
-            this.button_modifyDB.Size = new System.Drawing.Size(90, 27);
+            this.button_modifyDB.Size = new System.Drawing.Size(90, 37);
             this.button_modifyDB.TabIndex = 16;
-            this.button_modifyDB.Text = "Mod Intreb";
+            this.button_modifyDB.Text = "Modificare Intrebări";
             this.button_modifyDB.UseVisualStyleBackColor = true;
             this.button_modifyDB.Click += new System.EventHandler(this.button_modifyDB_Click);
             // 
